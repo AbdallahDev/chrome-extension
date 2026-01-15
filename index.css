@@ -26,3 +26,17 @@ body {
   background-color: #5f9341;
   color: white;
 }
+
+#box {
+  background-color: rgb(76 177 177);
+  color: white;
+  margin: 10px auto;
+  width: 580px;
+  text-align: center;
+  /* height: 178px; */
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  font-size: xx-large;
+  padding: 77px 0;
+}
