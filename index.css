@@ -4,9 +4,10 @@ body {
   font-size: larger;
 }
 
-.font {
+.styling {
   font-size: inherit;
   font-weight: inherit;
+  margin-bottom: 7px;
 }
 
 #inputTxt {
@@ -15,7 +16,6 @@ body {
   border: 2px solid #5f9341;
   padding: 15px;
   outline: none;
-  margin-bottom: 7px;
 }
 #inputTxt:focus {
   background-color: #e0ecf0;
