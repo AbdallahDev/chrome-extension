@@ -12,11 +12,12 @@ function outputLead() {
   const anchorEl = document.createElement("a");
   lead = myLeads.at(-1);
   anchorEl.href = lead;
+  anchorEl.target = "_blank";
   const anchorTxt = document.createTextNode(lead);
   anchorEl.appendChild(anchorTxt);
   leadsDivEl.appendChild(anchorEl);
+
   const breakEl = document.createElement("br");
-  anchorEl.target = "_blank";
   leadsDivEl.appendChild(breakEl);
 }
 
