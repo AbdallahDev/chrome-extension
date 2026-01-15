@@ -40,3 +40,10 @@ body {
   font-size: xx-large;
   padding: 77px 0;
 }
+
+#buyBtn{
+    background-color: rgb(224, 131, 131);
+    color: white;
+    padding: 20px;
+    border: none;
+}
