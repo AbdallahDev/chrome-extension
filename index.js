@@ -4,23 +4,21 @@ const myLeads = [];
 const leadsListEl = document.getElementById("leadsList");
 leadsListEl.style.listStyleType = "none";
 
+const liEl = document.createElement("li");
+const anchorEl = document.createElement("a");
+
 saveBtnEl.addEventListener("click", function () {
   myLeads.push(inputTxtEl.value);
   outputLead();
-  //   inputTxtEl.value = ""
+  inputTxtEl.value = "";
 });
 
 function outputLead() {
-  const liEl = document.createElement("li");
   leadsListEl.append(liEl);
-  const anchorEl = document.createElement("a");
   lead = myLeads.at(-1);
   anchorEl.href = lead;
   anchorEl.target = "_blank";
-  anchorEl.textContent = lead
-//   const anchorTxt = document.createTextNode(lead);
-//   anchorEl.appendChild(anchorTxt);
-//   liEl.appendChild(anchorEl);
+  anchorEl.textContent = lead;
   liEl.append(anchorEl);
 }
 
