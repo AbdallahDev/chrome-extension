@@ -62,18 +62,3 @@ clearBtnEl.addEventListener("click", () => {
   localStorage.clear();
   leadsListEl.innerHTML = "";
 });
-
-let testList = `["1","2","3"]`;
-
-console.log(typeof testList)
-
-testList = JSON.parse(testList)
-
-console.log(typeof testList)
-testList.push("4")
-
-console.log(testList)
-
-testList = JSON.stringify(testList)
-
-console.log(typeof testList, testList)
