@@ -49,12 +49,13 @@ function rebuildLeadsList() {
       anchorEl.textContent = lead;
       liEl.append(anchorEl);
     }
-  }
+  } else leadsListEl.innerHTML = "";
 }
 
 rebuildLeadsList();
 
-clearBtnEl.addEventListener("click", () => {
+clearBtnEl.addEventListener("dblclick", () => {
   localStorage.clear();
-  leadsListEl.innerHTML = "";
+  myLeads = [];
+  rebuildLeadsList();
 });

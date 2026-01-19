@@ -7,8 +7,8 @@ body {
 }
 
 .styling {
-  font-size: inherit;
-  font-weight: inherit;
+  font-size: large;
+  font-weight: 800;
   margin-bottom: 7px;
 }
 
@@ -23,18 +23,18 @@ body {
   background-color: #e0ecf0;
 }
 
-button {
+#inputBtn {
   padding: 15px 25px;
   background-color: #5f9341;
   color: white;
-  border: none;
+  border: 2px solid #5f9341;
 }
-/* #inputBtn {
+#clearBtn {
   padding: 15px 25px;
-  background-color: #5f9341;
-  color: white;
-  border: none;
-} */
+  background-color: #fff;
+  color: #5f9341;
+  border: 2px solid #5f9341;
+}
 
 #box {
   background-color: rgb(76 177 177);
