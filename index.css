@@ -3,6 +3,7 @@ body {
   font-weight: 700;
   font-size: small;
   min-width: 400px;
+  max-width: 800px;
 }
 
 .styling {

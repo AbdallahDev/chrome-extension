@@ -42,9 +42,9 @@ buyBtnEl.addEventListener("click", function () {
 
 //will rebuilds the leads list after each refresh
 function rebuildLeadsList() {
-  leads = JSON.parse(localStorage.getItem("myLeads")) || [];
-  if (leads.length > 0) {
-    for (const lead of leads) {
+  //   leads = JSON.parse(localStorage.getItem("myLeads")) || [];
+  if (myLeads.length > 0) {
+    for (const lead of myLeads) {
       const liEl = document.createElement("li");
       leadsListEl.append(liEl);
       const anchorEl = document.createElement("a");
@@ -62,3 +62,18 @@ clearBtnEl.addEventListener("click", () => {
   localStorage.clear();
   leadsListEl.innerHTML = "";
 });
+
+let testList = `["1","2","3"]`;
+
+console.log(typeof testList)
+
+testList = JSON.parse(testList)
+
+console.log(typeof testList)
+testList.push("4")
+
+console.log(testList)
+
+testList = JSON.stringify(testList)
+
+console.log(typeof testList, testList)
