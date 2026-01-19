@@ -1,11 +1,8 @@
 const saveBtnEl = document.getElementById("inputBtn");
 const inputTxtEl = document.getElementById("inputTxt");
-let myLeads = [];
+let myLeads = JSON.parse(localStorage.getItem("myLeads")) ?? [];
 const leadsListEl = document.getElementById("leadsList");
 const clearBtnEl = document.getElementById("clearBtn");
-
-leadsListEl.style.listStyleType = "none";
-myLeads = JSON.parse(localStorage.getItem("myLeads")) || [];
 
 saveBtnEl.addEventListener("click", function () {
   myLeads.push(inputTxtEl.value);
