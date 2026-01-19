@@ -42,7 +42,6 @@ buyBtnEl.addEventListener("click", function () {
 
 //will rebuilds the leads list after each refresh
 function rebuildLeadsList() {
-  //   leads = JSON.parse(localStorage.getItem("myLeads")) || [];
   if (myLeads.length > 0) {
     for (const lead of myLeads) {
       const liEl = document.createElement("li");
