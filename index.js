@@ -1,20 +1,24 @@
 const saveBtnEl = document.getElementById("inputBtn");
 const inputTxtEl = document.getElementById("inputTxt");
-const myLeads = [];
+let myLeads = [];
 const leadsListEl = document.getElementById("leadsList");
-leadsListEl.style.listStyleType = "none";
+const clearBtnEl = document.getElementById("clearBtn");
 
-const liEl = document.createElement("li");
-const anchorEl = document.createElement("a");
+leadsListEl.style.listStyleType = "none";
+myLeads = JSON.parse(localStorage.getItem("myLeads")) || [];
 
 saveBtnEl.addEventListener("click", function () {
   myLeads.push(inputTxtEl.value);
   outputLead();
   inputTxtEl.value = "";
+
+  localStorage.setItem("myLeads", JSON.stringify(myLeads));
 });
 
 function outputLead() {
+  const liEl = document.createElement("li");
   leadsListEl.append(liEl);
+  const anchorEl = document.createElement("a");
   lead = myLeads.at(-1);
   anchorEl.href = lead;
   anchorEl.target = "_blank";
@@ -29,10 +33,32 @@ boxEl.addEventListener("click", function () {
 });
 
 const containerEl = document.getElementById("container");
-containerEl.innerHTML =
-  '<button id="buyBtn" class="styling">' + "Buy" + "</button>";
+containerEl.innerHTML = `<button id="buyBtn" class="styling">Buy</button>`;
 
 const buyBtnEl = document.getElementById("buyBtn");
 buyBtnEl.addEventListener("click", function () {
   containerEl.innerHTML += "<p>Thank you for buying!</p>";
+});
+
+//will rebuilds the leads list after each refresh
+function rebuildLeadsList() {
+  leads = JSON.parse(localStorage.getItem("myLeads")) || [];
+  if (leads.length > 0) {
+    for (const lead of leads) {
+      const liEl = document.createElement("li");
+      leadsListEl.append(liEl);
+      const anchorEl = document.createElement("a");
+      anchorEl.href = lead;
+      anchorEl.target = "_blank";
+      anchorEl.textContent = lead;
+      liEl.append(anchorEl);
+    }
+  }
+}
+
+rebuildLeadsList();
+
+clearBtnEl.addEventListener("click", () => {
+  localStorage.clear();
+  leadsListEl.innerHTML = "";
 });

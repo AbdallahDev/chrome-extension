@@ -1,7 +1,8 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 700;
-  font-size: larger;
+  font-size: small;
+  min-width: 400px;
 }
 
 .styling {
@@ -21,11 +22,18 @@ body {
   background-color: #e0ecf0;
 }
 
-#inputBtn {
+button {
   padding: 15px 25px;
   background-color: #5f9341;
   color: white;
+  border: none;
 }
+/* #inputBtn {
+  padding: 15px 25px;
+  background-color: #5f9341;
+  color: white;
+  border: none;
+} */
 
 #box {
   background-color: rgb(76 177 177);
@@ -41,9 +49,21 @@ body {
   padding: 77px 0;
 }
 
-#buyBtn{
-    background-color: rgb(224, 131, 131);
-    color: white;
-    padding: 20px;
-    border: none;
+#buyBtn {
+  background-color: rgb(224, 131, 131);
+  color: white;
+  padding: 20px;
+  border: none;
+}
+
+#leadsList {
+  list-style: none;
+  padding: 0;
+}
+#leadsList li {
+  margin: 10px 0;
+}
+#leadsList a {
+  color: #5f9341;
+  font-size: small;
 }
