@@ -42,8 +42,6 @@ body {
   margin: 10px auto;
   width: 580px;
   text-align: center;
-  /* height: 178px; */
-  /* display: flex; */
   flex-direction: column;
   justify-content: center;
   font-size: xx-large;
