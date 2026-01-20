@@ -6,17 +6,17 @@ const clearBtnEl = document.getElementById("clearBtn");
 
 saveBtnEl.addEventListener("click", function () {
   myLeads.push(inputTxtEl.value);
-  outputLead();
+  render(myLeads);
   inputTxtEl.value = "";
 
   localStorage.setItem("myLeads", JSON.stringify(myLeads));
 });
 
-function outputLead() {
+function render(leads) {
   const liEl = document.createElement("li");
   leadsListEl.append(liEl);
   const anchorEl = document.createElement("a");
-  lead = myLeads.at(-1);
+  lead = leads.at(-1);
   anchorEl.href = lead;
   anchorEl.target = "_blank";
   anchorEl.textContent = lead;
@@ -38,9 +38,9 @@ buyBtnEl.addEventListener("click", function () {
 });
 
 //will rebuilds the leads list after each refresh
-function rebuildLeadsList() {
-  if (myLeads.length > 0) {
-    for (const lead of myLeads) {
+function renderList(leads) {
+  if (leads.length > 0) {
+    for (const lead of leads) {
       const liEl = document.createElement("li");
       leadsListEl.append(liEl);
       const anchorEl = document.createElement("a");
@@ -52,10 +52,10 @@ function rebuildLeadsList() {
   } else leadsListEl.innerHTML = "";
 }
 
-rebuildLeadsList();
+renderList(myLeads);
 
 clearBtnEl.addEventListener("dblclick", () => {
   localStorage.clear();
   myLeads = [];
-  rebuildLeadsList();
+  renderList(myLeads);
 });
